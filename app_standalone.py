@@ -132,11 +132,11 @@ User question:
 {user_query}
 
 Instructions:
-- Be friendly and professional
+- Be friendly and professional and more concise
 - Use the context to provide accurate information about the academy
 - If the information is not in the context, politely say you don't have that specific information
 - Keep answers concise and relevant
-- Focus on programs, facilities, coaches, timings, and fees
+- Don't mention academy instead you can use sports
 
 Answer:"""
     
