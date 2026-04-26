@@ -15,7 +15,7 @@ import os
 # Page Configuration
 # -----------------------------
 st.set_page_config(
-    page_title="CE Tennis Academy Bot",
+    page_title="CE Sports Insight Bot",
     page_icon="🎾",
     layout="centered",
     initial_sidebar_state="expanded"
@@ -120,7 +120,7 @@ def generate_response(user_query: str, n_results: int = 3):
     )
     
     # Build prompt
-    prompt = f"""You are a helpful assistant for CE Tennis Academy in Chennai.
+    prompt = f"""You are a helpful assistant for CE Sports in Chennai.
 
 Previous conversation:
 {memory_context if memory_context else "None"}
@@ -143,7 +143,7 @@ Answer:"""
     try:
         # Call Groq
         response = groq_client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-20b",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7,
             max_tokens=500
@@ -167,7 +167,7 @@ Answer:"""
 # -----------------------------
 with st.sidebar:
     st.header("ℹ️ About")
-    st.write("This AI chatbot helps you learn about CE Tennis Academy's programs, facilities, and schedules.")
+    st.write("This AI chatbot helps you learn about sports services, facilities, and schedules.")
     
     st.divider()
     
@@ -223,8 +223,8 @@ with st.sidebar:
 # -----------------------------
 st.markdown("""
     <div class="main-header">
-        <h1>🎾 CE Tennis Academy Assistant</h1>
-        <p style='margin: 0; opacity: 0.9;'>Ask me anything about our academy!</p>
+        <h1>🎾 CE Sports Insight Assistant</h1>
+        <p style='margin: 0; opacity: 0.9;'>Ask me anything about our CE sports!</p>
     </div>
     """, unsafe_allow_html=True)
 
